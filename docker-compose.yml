@@ -1,0 +1,16 @@
+# Comando docker run equivalente:
+# docker run -p 80:80 -v ~/meu-teste/target:/var/www/html  parana/apache2
+web:
+  image: parana/apache2
+  ports:
+  - "80:80"
+  volumes:
+  - ~/meu-teste/target:/var/www/html
+
+# Comando docker run equivalente:
+# docker run -i -t --rm -v ~/meu-teste/blog:/www -v ~/meu-teste/target:/target parana/hugo
+webgenerator:
+  image: parana/hugo
+  volumes:
+  - ~/meu-teste/blog:/www
+  - ~/meu-teste/target:/target
